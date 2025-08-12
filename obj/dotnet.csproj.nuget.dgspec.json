@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aayush\\Desktop\\todo_Aayush\\dotnet.csproj": {}
+    "C:\\Users\\Aayush\\Desktop\\todo\\dotnet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aayush\\Desktop\\todo_Aayush\\dotnet.csproj": {
+    "C:\\Users\\Aayush\\Desktop\\todo\\dotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aayush\\Desktop\\todo_Aayush\\dotnet.csproj",
+        "projectUniqueName": "C:\\Users\\Aayush\\Desktop\\todo\\dotnet.csproj",
         "projectName": "dotnet",
-        "projectPath": "C:\\Users\\Aayush\\Desktop\\todo_Aayush\\dotnet.csproj",
+        "projectPath": "C:\\Users\\Aayush\\Desktop\\todo\\dotnet.csproj",
         "packagesPath": "C:\\Users\\Aayush\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aayush\\Desktop\\todo_Aayush\\obj\\",
+        "outputPath": "C:\\Users\\Aayush\\Desktop\\todo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Aayush\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

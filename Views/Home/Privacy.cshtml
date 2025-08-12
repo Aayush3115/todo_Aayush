@@ -1,6 +1,33 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+@* @model List<todo.Models.todolist> *@
+@model todo.Models.todolist
+@* <h1>@ViewData["Title"]</h1> *@
+
+@* <p>Use this page to detail your site's privacy policy.</p>
+
+<h1>Data from viewdata</h1>
+
+<h3>Task Title:</h3>@ViewData["Task"]
+<h3>Task Description:</h3>@ViewData["Description"]
+<h3>Task Status:</h3>@ViewData["Status"]
+
+<h3>Task Title:</h3>@ViewBag.Task1
+<h3>Task Description:</h3>@ViewBag.Description1
+<h3>Task Status:</h3>@ViewBag.Status1 *@ 
+
+<h1>Implememting Tag Helper</h1>
+<form asp-controller ="Home" asp-action="Privacy" method="POST">
+    <label asp-for="Task"></label>
+    <input asp-for="Task"/>
+    <label asp-for="Description"></label>
+    <input asp-for="Description"/>
+    <label asp-for="status"></label>
+    <input asp-for="status"/>
+    @Html.EditorForModel()
+    <botton type="submit">Add Task</botton>
+
+</form>
+

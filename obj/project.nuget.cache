@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "B8bR85mFYzY=",
+  "dgSpecHash": "k/EuqvTG0WE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Aayush\\Desktop\\todo_Aayush\\dotnet.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Aayush\\Desktop\\todo\\dotnet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Aayush\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
