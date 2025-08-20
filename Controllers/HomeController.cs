@@ -1,54 +1,53 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using dotnet.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using todo.Data;
 using todo.Models;
 
-namespace dotnet.Controllers;
-
-public class HomeController : Controller
+namespace todo.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
-
-    public IActionResult Index()
-    {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        // ViewData["Task"] = "Learn dot net";
-        // ViewData["Description"] = "Getting started in web";
-        // ViewData["status"] = "Done";
-
-        // ViewBag.Task1 = "Start Project";
-        // ViewBag.Description1 = "Start To Do List";
-        // ViewBag.status1 = "InProcess";
-
-        // var TaskList = new List<todolist>
-        // {
-        //     new todolist{Task="learn dot net",
-        //     Description="starting my jorney",
-        //     status="done"},
-        //     new todolist{Task="Build a project",
-        //     Description="starting new todo",
-        //     status="inprocess"},
-        //     new todolist{Task="push to github",
-        //     Description="push to git to make publix",
-        //     status="todo"}
-        // };
+        private readonly ILogger<HomeController> _logger;
+        private readonly ApplicationDbContext _context;
 
 
-        return View(new todolist());
-    }
+        public HomeController(ILogger<HomeController> logger,ApplicationDbContext context)
+        {
+            _logger = logger;
+            _context = context;
+        }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        //[HttpPost]
+        public IActionResult Privacy()
+        {
+            if (Request.Method == "POST")
+            {
+                var tlist = new Todolist
+                {
+                    Task = Request.Form["task"],
+                    Description = Request.Form["description"],
+                    Status = Request.Form["status"],
+                };
+                Console.WriteLine(tlist);
+                _context.Tasklist.Add(tlist);
+                _context.SaveChanges();
+                Console.WriteLine("Form Submitted");
+            }
+            var tasklist = _context.Tasklist.ToList();
+            return View(tasklist);
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
     }
 }

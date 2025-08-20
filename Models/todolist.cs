@@ -2,8 +2,9 @@ namespace todo.Models;
 using System.ComponentModel.DataAnnotations;
 
 
-public class todolist
+public class Todolist
 {
+    public int Id { get; set; }
     [Required]
     [Display(Name="Task")]
     public string Task { get; set; }
@@ -14,6 +15,6 @@ public class todolist
 
     [Required]
     [Display(Name="status")]
-    public string status { get; set; }
+    public string Status { get; set; }
 
 }
