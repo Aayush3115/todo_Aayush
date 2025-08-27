@@ -1,0 +1,30 @@
+@{
+    ViewData["Title"] = "Mytasklist";
+}
+@* @model List<todo.Models.Todolist> *@
+
+
+<h1>My Task Lists</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var list in Model)
+        {
+            <tr>
+                <td>@list.Task</td>
+                <td>@list.Description</td>
+                <td>@list.Status</td>
+                <td><a asp-action="Edit" asp-route-id="@list.Id" class="btn btn-sm btn-primary">Edit</a></td>
+               
+            </tr>
+        }
+    </tbody>
+</table>

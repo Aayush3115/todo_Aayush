@@ -2,7 +2,7 @@
     ViewData["Title"] = "Privacy Policy";
 }
 
-@model List<todo.Models.Todolist>
+@* @model List<todo.Models.Todolist> *@
 @* @model todo.Models.Todolist *@
 @* <h1>@ViewData["Title"]</h1> *@
 
@@ -30,23 +30,42 @@
     @* <br><button type="submit">Add Task</button> *@
 
     <form asp-controller="Home" asp-action="Privacy" method="POST">
-    <div class="form-group">
-        <label for="task">Task</label>
-        <input type="text" class="form-control" id="task" name="task" ariadescribedby="TaskHelp"
-            placeholder="Enter your task">
-    </div>
-    <div class="form-group">
-        <label for="description">Description</label>
-        <input type="text" class="form-control" id="description" name="description" ariadescribedby="DescriptionHelp"
-            placeholder="Enter description of your tasks">
-    </div>
-    <div class="form-group">
-        <label for="status">Status</label>
-        <input type="text" class="form-control" id="status" name="status" ariadescribedby="StatusHelp"
-            placeholder="Enter status of your task">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+        <div class="form-group">
+            <label for="task">Task</label>
+            <input type="text" class="form-control" id="task" name="task" ariadescribedby="TaskHelp"
+                placeholder="Enter your task">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" class="form-control" id="description" name="description"
+                ariadescribedby="DescriptionHelp" placeholder="Enter description of your tasks">
+        </div>
+        <div class="form-group">
+            <label for="status">Status</label>
+            <input type="text" class="form-control" id="status" name="status" ariadescribedby="StatusHelp"
+                placeholder="Enter status of your task">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </form>
 
-
+<h1>My Task Lists</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Task</th>
+            <th scope="col">Description</th>
+            <th scope="col">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var list in Model)
+        {
+            <tr>
+                <td>@list.Task</td>
+                <td>@list.Description</td>
+                <td>@list.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>
