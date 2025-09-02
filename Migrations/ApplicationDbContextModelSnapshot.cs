@@ -21,7 +21,7 @@ namespace dotnet.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("todo.Models.todolist", b =>
+            modelBuilder.Entity("todo.Models.Todolist", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -33,11 +33,11 @@ namespace dotnet.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Task")
+                    b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("status")
+                    b.Property<string>("Task")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

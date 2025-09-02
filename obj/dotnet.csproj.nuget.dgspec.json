@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aayush\\Desktop\\todo\\dotnet.csproj": {}
+    "D:\\todo\\dotnet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aayush\\Desktop\\todo\\dotnet.csproj": {
+    "D:\\todo\\dotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aayush\\Desktop\\todo\\dotnet.csproj",
+        "projectUniqueName": "D:\\todo\\dotnet.csproj",
         "projectName": "dotnet",
-        "projectPath": "C:\\Users\\Aayush\\Desktop\\todo\\dotnet.csproj",
-        "packagesPath": "C:\\Users\\Aayush\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aayush\\Desktop\\todo\\obj\\",
+        "projectPath": "D:\\todo\\dotnet.csproj",
+        "packagesPath": "C:\\Users\\sapko\\.nuget\\packages\\",
+        "outputPath": "D:\\todo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Aayush\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\sapko\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -58,6 +58,10 @@
               "target": "Package",
               "version": "[9.0.8, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -88,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
